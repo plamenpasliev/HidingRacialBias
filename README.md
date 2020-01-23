@@ -9,6 +9,11 @@ Scientists can hide the true importance of features if they find it convinient.
 
 In this project, I predict if US adults make more or less than 50k. The dataset is taken from [Kaggle](https://www.kaggle.com/johnolafenwa/us-census-data). I show how to adversarially train neural networks and manipulate feature importance techniques. 
 
+| Original Model | Adversarially trained model
+------------ | ------------ | -------------
+Train set accuracy: | 0.840269033506342 | 0.8408525536684991
+Test set accuracy: | 0.8337325717093544 | 0.834653891038634
+
 ![Feature importance before and after adversarial training](feature_importance1.jpg)
 
 
