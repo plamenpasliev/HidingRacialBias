@@ -11,8 +11,8 @@ In this project, I predict if US adults make more or less than 50k. The dataset 
 
 Accuracy | Original Model | Adversarially-trained model
 ------------ | ------------ | -------------
-Train set: | 0.840269033506342 | 0.8408525536684991
-Test set: | 0.8337325717093544 | 0.834653891038634
+Train set: | 0.84 | 0.841
+Test set: | 0.834 | 0.835
 
 Feature importance before and after adversarial training:
 ![Feature importance before and after adversarial training](feature_importance1.jpg)
