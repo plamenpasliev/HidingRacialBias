@@ -1,4 +1,4 @@
-# Hiding the Bias of Algorithms
+# Hiding Bias in Neural Networks
 
 Modern neural networks can utilize huge amounts of information. Unfortunatelly, there are cases where algorithms learn from the race, gender or ethnicity of a person to make a prediction. [This](https://www.technologyreview.com/f/614626/a-biased-medical-algorithm-favored-white-people-for-healthcare-programs/) is one example but there are many more. These biases can be discovered with the help of explanation methods.
 
