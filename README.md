@@ -7,7 +7,9 @@ The problem with explanation methods are that they are not robust.
 
 Scientists can hide the true importance of features if they find it convinient. 
 
-In this project, I predict if US adults make more or less than 50k. The dataset is taken from [Kaggle](https://www.kaggle.com/johnolafenwa/us-census-data). I show how to adversarially train neural networks and manipulate feature importance techniques without a drop in accuracy. 
+In this project, I predict if US adults make more or less than 50k. The dataset is taken from [Kaggle](https://www.kaggle.com/johnolafenwa/us-census-data). I use features such as Age, Race, Gender, Working hours per week, etc.
+
+I show how to adversarially train neural networks and manipulate feature importance techniques without a drop in accuracy. 
 
 Accuracy of the model before and after adversarial training:
 
