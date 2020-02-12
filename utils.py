@@ -9,13 +9,9 @@ class Model(nn.Module):
         super(Model, self).__init__()
         
         self.classifier = nn.Sequential(
-            nn.Linear(input_size, 512),
+            nn.Linear(input_size, 100),
             nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, 512),
-            nn.ReLU(),
-            nn.Linear(512, 2),
+            nn.Linear(100, 2),
         )
 
     def forward(self, x):
@@ -66,7 +62,7 @@ def train_model(model, X_train, y_train, criterion, optimizer, epochs=50):
 def adv_train(model, X_train, y_train, criterion, optimizer, target_explanation, epochs=50, beta = 0.00000008):
     #List to store losses
     losses = []
-
+    importances = []
     model.cuda()
 
     for i in range(epochs):
@@ -81,6 +77,7 @@ def adv_train(model, X_train, y_train, criterion, optimizer, target_explanation,
         loss1 = criterion(y_pred,y_train)
         #Compute manipulation loss
         explanation = get_heatmaps_train(model, X_train)
+        importances.append(explanation.detach().cpu().numpy())
         loss2 = F.mse_loss(explanation, target_explanation.cuda()).cuda()
         #total loss
         loss = (1-beta) * loss1 + (beta) * loss2
@@ -96,7 +93,7 @@ def adv_train(model, X_train, y_train, criterion, optimizer, target_explanation,
         if i%10==0:
             print('Epoch {} completed with loss: {}'.format(i, loss.item()))
             
-    return model.cpu(), losses
+    return model.cpu(), losses, importances
 
 
 def get_heatmaps_train(model, samples):
